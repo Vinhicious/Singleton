@@ -1,0 +1,15 @@
+package Singleton;
+
+
+public class Main {
+    public static void main(String[] args){
+        
+        ConexaoBanco conexao1 = ConexaoBanco.getInstancia("Banco X");
+        ConexaoBanco conexao2 = ConexaoBanco.getInstancia("Banco y");
+        
+        System.out.println(conexao1.getbancoDeDados());
+        System.out.println(conexao2.getbancoDeDados());
+        
+        System.out.println("Mesma Instancia: " + (conexao1 == conexao2));
+    }
+}
