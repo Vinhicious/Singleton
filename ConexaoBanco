@@ -1,0 +1,22 @@
+public class ConexaoBanco {
+    private static ConexaoBanco instancia;
+    private final String bancoDeDados;
+    
+    private ConexaoBanco(String bancoDeDados){
+        this.bancoDeDados = bancoDeDados;
+        System.out.println("Conexão com o banco de dados " + bancoDeDados + " estabelecida.");
+    }
+    
+    public static ConexaoBanco getInstancia(String bancoDeDados){
+        if(instancia == null){
+            instancia = new ConexaoBanco(bancoDeDados);
+        } else {
+            System.out.println("Instância já criada, reutilizando a conexão.");
+        }
+        return instancia;
+    }
+    
+    public String getbancoDeDados() {
+        return bancoDeDados;
+    }
+}
